@@ -59,25 +59,9 @@ const usersPut = async (req, res = response) => {
 
 const usersDelete = async (req, res = response) => {
     const {id} = req.params;
-    // try {
-    //     // Utilizar findByIdAndUpdate para actualizar el campo tuCampo a falso
-    //     const resultado = await User.findByIdAndUpdate(
-    //       id,
-    //       { status: false },
-    //       { new: true } // Esto devuelve el documento actualizado
-    //     );
-    
-    //     if (resultado) {
-    //       console.log('Estado actualizado a falso correctamente:', resultado);
-    //     } else {
-    //       console.log('Documento no encontrado.');
-    //     }
-    //   } catch (error) {
-    //     console.error('Error al actualizar el estado:', error.message);
-    //   }
-
+    const uid = req.uid;
     const user = await User.findByIdAndUpdate(id, { status: false }, {new:true});
-    res.json({id});
+    res.json({id, uid, user});
 }
 
 
