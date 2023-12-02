@@ -1,6 +1,5 @@
 const Router = require("express");
 const { check } = require("express-validator");
-const { login, loginGoogle } = require("../controller/auth");
 const { fieldValidator } = require("../middlewares/field_validator");
 const { validateJWT, isAdminRole } = require("../middlewares");
 const { addCategory, getCategories, getCategory, updateCategory, deleteCategory } = require("../controller/category");
